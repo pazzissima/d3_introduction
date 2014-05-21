@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript"></script>
+    <style>
+    	div{
+    		background-color: blue;
+    		margin: 5px;
+    		font-size: 20px;
+    		color: #007;
+    		padding: 10px;
+    	}
+
+    	circle{
+    		stroke: black;
+    		stroke-width: 4px;
+    		fill: #99CC99;
+    	}
+	  </style>  
+  </head>
+  <body>
+
+
+<!-- #1 -->
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="700" width="500" id="example">
+		  <circle cx="50" cy="50" r="10"/>
+		  <circle cx="80" cy="50" r="10"/>
+		  <circle cx="110" cy="50" r="10"/>
+		  <circle cx="140" cy="50" r="10"/>
+		  <circle cx="170" cy="50" r="10"/>
+		  <circle cx="200" cy="50" r="10"/>
+		  <circle cx="230" cy="50" r="10"/>
+		  <circle cx="260" cy="50" r="10"/>
+		  <circle cx="290" cy="50" r="10"/>
+		  <circle cx="320" cy="50" r="10"/>
+
+
+		  <circle cx="50" cy="85" r="10"/>
+		  <circle cx="80" cy="85" r="10"/>
+		  <circle cx="110" cy="85" r="10"/>
+		  <circle cx="140" cy="85" r="10"/>
+		  <circle cx="170" cy="85" r="10"/>
+		  <circle cx="200" cy="85" r="10"/>
+		  <circle cx="230" cy="85" r="10"/>
+		  <circle cx="260" cy="85" r="10"/>
+		  <circle cx="290" cy="85" r="10"/>
+		  <circle cx="320" cy="85" r="10"/>
+
+	</svg>   
+<!-- END #1 -->
+
+
+
+<script>
+  	d3.selectAll("circle")
+  		.data([68,94,120,146,172,198,224,250,276,302,41,73,105,137,169,201,233,265,297,329])
+  	  	.transition()
+  		.duration(2000)
+  		.attr("cx", function(d){return d})
+
+</script>
+
+
+
+  </body>
+</html>
+
+
