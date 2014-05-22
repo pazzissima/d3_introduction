@@ -1,0 +1,193 @@
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript"></script>
+    <style>
+
+      rect {
+        fill:rgb(110,182,106);
+        stroke:black;
+        stroke-width:5;
+        opacity:0.8;
+      }
+
+      circle {
+        stroke: black;
+        stroke-width: 4px;
+        fill: rgb(241,181,115);
+        opacity: 0.8;
+      }
+	  </style>  
+  </head>
+
+  <body>
+<!-- #3 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="700" width="500">
+      <rect x="50" y="350" width="90" height="45"/>
+      <rect x="140" y="350" width="90" height="45"/>
+      <rect x="230" y="350" width="90" height="45"/>
+<!--   </svg> -->
+<!-- END #3 -->
+
+
+<!-- #4 -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="1000" width="500" id="example">
+      <circle cx="50" cy="200" r="10"/>
+      <circle cx="80" cy="200" r="10"/>
+      <circle cx="110" cy="200" r="10"/>
+      <circle cx="140" cy="200" r="10"/>
+      <circle cx="170" cy="200" r="10"/>
+      <circle cx="200" cy="200" r="10"/>
+      <circle cx="230" cy="200" r="10"/>
+      <circle cx="260" cy="200" r="10"/>
+      <circle cx="290" cy="200" r="10"/>
+      <circle cx="320" cy="200" r="10"/>
+  </svg>
+<!-- END #4 -->
+
+
+<script>
+
+
+  d3.selectAll("rect")
+    .data([320,365,410])
+    .transition()
+    .duration(1000)
+    .attr("y", function(d){return d})
+  d3.selectAll("rect")
+    .transition()
+    .delay(1000)
+    .duration(1000)
+    .attr("x", 140)
+
+// -----------------------------------------------------------------------------------------------------
+// NO!!!
+  d3.selectAll("circle")
+    .data([200,167.6718,232.3282,147.6919,252.3081,147.6919,252.3081,167.6718,232.3282,200])
+    .transition()
+    .duration(2000)
+    .attr("cy", function(d){return d})
+  d3.selectAll("circle")
+    .data([50,60.5041,60.5041,88.0041,88.0041,121.9959,121.9959,149.4959,149.4959,160])
+    .transition()
+    .delay(2000)
+    .duration(1000)
+    .attr("cx", function(d){return d})
+  d3.selectAll("circle")
+    .data([200,230,170,230,170,230,170,230,170,200,170])
+    .transition()
+    .delay(3000)
+    .duration(1000)
+    .attr("cy", function(d){return d})
+  d3.selectAll("circle")
+    .data([50,50,50,80,80,110,110,140,140,140])
+    .transition()
+    .delay(4000)
+    .duration(1000)
+    .attr("cx", function(d){return d})
+
+
+
+
+
+// -----------------------------------------------------------------------------------------------------
+
+// // some made-up data
+// var data = [1,1,1,1,1,1,1,1,1,1];
+
+// // tree-ify our fake data
+// var dataTree = {
+//     children: data.map(function(d) { return { size: d }; })
+// };
+
+// // basic settings
+// var w = 200,
+//     m = 200,
+//     maxRadius = 10,
+//     padding = 10;
+
+
+// // size scale for data
+// var radiusScale = d3.scale.sqrt()
+//     .domain([0, d3.max(data)])
+//     .range([0, maxRadius]);
+
+// // determine the appropriate radius for the circle
+// var roughCircumference = d3.sum(data.map(radiusScale)) * 2 +
+//         padding * (data.length - 1),
+//     radius = roughCircumference / (Math.PI * 2);
+
+// // make a radial tree layout
+// var tree = d3.layout.tree()
+//     .size([360, radius])
+//     .separation(function(a, b) {
+//         return radiusScale(a.size) + radiusScale(b.size);
+//     });
+
+// // make the svg
+// var svg = d3.select("body").append("svg")
+//     .attr("width", w + m * 2)
+//     .attr("height", w + m * 2)
+//   .append("g")
+//     .attr("transform", "translate(" + (w / 2 + m) + "," + (w / 2 + m) + ")");
+
+// // apply the layout to the data
+// var nodes = tree.nodes(dataTree);
+
+// // create dom elements for the node
+// var node = svg.selectAll(".node")
+//       .data(nodes.slice(1)) // cut out the root node, we don't need it
+//     .enter().append("g")
+//       .attr("class", "node")
+//       .attr("transform", function(d) {
+//           return "rotate(" + (d.x - 90) + ") translate(" + d.y + ")";
+//       })
+
+// node.append("circle")
+//     .attr("r", function(d) { return radiusScale(d.size); });
+
+
+
+// ----------------------------------------------------------------------------------------------
+
+
+// NO!!!!!!
+  // d3.selectAll("circle")
+  //   .transition()
+  //   .duration(2000)
+  //   .attr("cy", function(d,i){return (200-(Math.sin((36)*(i-1)))*55)})
+  // d3.selectAll("circle")
+  //   .transition()
+  //   .delay(2000)
+  //   .duration(1000)
+  //   .attr("cx", function(d,i){return (105-(Math.cos(36*(i+1))*55))})
+
+
+
+</script>
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
