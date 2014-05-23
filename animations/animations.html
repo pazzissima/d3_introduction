@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+    <style>
+    	circle {
+    		stroke: black;
+    		stroke-width: 4px;
+    		fill: #99CC99;
+        opacity: 0.8;
+    	}
+
+        rect {
+        fill:rgb(217,226,235);
+        stroke:black;
+        stroke-width:5;
+        opacity:0.8;
+      }
+
+      #play_button, #rect_button{
+      /*  background-image: url('../images/iconmonstr-arrow-37-icon-256.png');*/
+        background-image: url('http://www2.psd100.com/ppp/2013/11/2701/play-1127191835.png');
+        width: 25px;
+        height: 25px;
+        background-position:center;
+        background-size: cover;
+        background-repeat:no-repeat;
+      }
+	  </style>  
+  </head>
+
+  <body>
+
+    <div id="play_button">
+    </div>
+
+
+
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="300" width="900" id="example">
+		  <circle cx="50" cy="50" r="10"/>
+		  <circle cx="80" cy="50" r="10"/>
+		  <circle cx="110" cy="50" r="10"/>
+		  <circle cx="140" cy="50" r="10"/>
+		  <circle cx="170" cy="50" r="10"/>
+		  <circle cx="200" cy="50" r="10"/>
+		  <circle cx="230" cy="50" r="10"/>
+		  <circle cx="260" cy="50" r="10"/>
+		  <circle cx="290" cy="50" r="10"/>
+		  <circle cx="320" cy="50" r="10"/>
+
+
+		  <circle cx="50" cy="85" r="10"/>
+		  <circle cx="80" cy="85" r="10"/>
+		  <circle cx="110" cy="85" r="10"/>
+		  <circle cx="140" cy="85" r="10"/>
+		  <circle cx="170" cy="85" r="10"/>
+		  <circle cx="200" cy="85" r="10"/>
+		  <circle cx="230" cy="85" r="10"/>
+		  <circle cx="260" cy="85" r="10"/>
+		  <circle cx="290" cy="85" r="10"/>
+		  <circle cx="320" cy="85" r="10"/>
+	</svg>   
+
+  <div id="rect_button"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="700" width="500">
+      <rect x="50" y="50" width="90" height="45"/>
+      <rect x="140" y="50" width="90" height="45"/>
+      <rect x="50" y="95" width="90" height="45"/>
+      <rect x="140" y="95" width="90" height="45"/>
+  </svg>
+
+
+<script>
+    $('#play_button').on("click", function() {
+  	// d3.selectAll("circle")
+   //    .on('click', function(){ 
+        d3.selectAll("circle")
+    		.data([68,94,120,146,172,198,224,250,276,302,41,73,105,137,169,201,233,265,297,329])
+    	  .transition()
+    		.duration(2000)
+    		.attr("cx", function(d){return d})
+    // });   
+});
+
+
+    $('#rect_button').on("click", function() {
+    // d3.selectAll("rect")
+    //   .on('click', function(){ 
+        d3.selectAll("rect")
+        .data([20,160,20,160])
+        .transition()
+        .duration(1000)
+        .attr("x", function(d){return d})
+      d3.selectAll("rect")
+        .data([40,40,105,105])
+        .transition()
+        .delay(1000)
+        .duration(1000)
+        .attr("y", function(d){return d})
+    });
+</script>
+
+</body>
+</html>
+ 
+
+
