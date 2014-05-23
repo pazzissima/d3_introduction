@@ -1,8 +1,8 @@
 <html>
   <head>
     <script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--     // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="../poe.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript"></script>
     <style>
     	circle {
@@ -74,7 +74,7 @@
 
 
 <script>
-    $('#play_button').on("click", function() {
+    $$('#play_button')[0].addEvent('click', function() {
   	// d3.selectAll("circle")
    //    .on('click', function(){ 
         d3.selectAll("circle")
@@ -86,7 +86,7 @@
 });
 
 
-    $('#rect_button').on("click", function() {
+    $$('#rect_button')[0].addEvent("click", function() {
     // d3.selectAll("rect")
     //   .on('click', function(){ 
         d3.selectAll("rect")
